@@ -2,7 +2,7 @@ FROM vllm/vllm-openai:latest
 
 ENTRYPOINT python3 -m vllm.entrypoints.openai.api_server \
     --port $PORT \
-    --model ${MODEL_NAME:-google/gemma-2b-it} \
+    --model ${MODEL_NAME:-malhajar/legml} \
     ${REVISION:+--revision "$REVISION"} \
     ${UVICORN_LOG_LEVEL:+--uvicorn-log-level "$UVICORN_LOG_LEVEL"} \
     ${LORA_MODULES:+--lora-modules "$LORA_MODULES"} \
